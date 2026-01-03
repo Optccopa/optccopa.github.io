@@ -1,71 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Copa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    rel="stylesheet"
-  />
-</head>
+html, body {
+  width: 100%;
+  height: 100%;
+}
 
-<body>
-  <!-- Background overlay -->
-  <div class="overlay"></div>
+/* Background */
+body {
+  background: url("bg.jpg") center / cover no-repeat fixed;
+  overflow-x: hidden;
+}
 
-  <!-- Falling petals -->
-  <script>
-    const petalCount = 50;
-    for (let i = 0; i < petalCount; i++) {
-      const petal = document.createElement("div");
-      petal.className = "petal";
-      petal.style.left = Math.random() * 100 + "vw";
-      petal.style.animationDuration = 8 + Math.random() * 6 + "s";
-      petal.style.animationDelay = Math.random() * 5 + "s";
-      petal.style.opacity = Math.random();
-      document.body.appendChild(petal);
-    }
-  </script>
+/* Dark blur overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
 
-  <!-- Page -->
-  <div class="page">
+/* Layout */
+.page {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
 
-    <!-- Profile card -->
-    <div class="card">
-      <div class="banner"></div>
+/* Card */
+.card {
+  width: 360px;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
 
-      <h1>Copa</h1>
-      <span class="tag">Code OPTCCOPA #ad</span>
+/* Banner */
+.banner {
+  height: 120px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff77ff, #6b8cff);
+  margin-bottom: 15px;
+}
 
-      <div class="icons">
-        <a href="#"><i class="fa-solid fa-globe"></i></a>
-        <a href="#"><i class="fa-brands fa-discord"></i></a>
-        <a href="#"><i class="fa-brands fa-twitch"></i></a>
-        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
+/* Text */
+h1 {
+  text-align: center;
+  color: #ffd6ff;
+}
 
-      <div class="music">
-        <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Album Art">
-        <div>
-          <strong>Copa</strong>
-          <p>Listening to Follow God</p>
-        </div>
-      </div>
-    </div>
+.tag {
+  display: block;
+  margin: 10px auto;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 0, 255, 0.25);
+  color: #ffb7ff;
+  font-size: 13px;
+  width: fit-content;
+}
 
-    <!-- Discord widget -->
-    <div class="discord-widget">
-      <iframe
-        src="https://discord.com/widget?id=1383213688927813663&theme=dark"
-        allowtransparency="true"
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-      </iframe>
-    </div>
+/* Icons */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 15px 0;
+}
 
-  </div>
-</body>
-</html>
+.icons a {
+  color: #ffb7ff;
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.icons a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* Music */
+.music {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.35);
+  margin-top: 10px;
+}
+
+.music img {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+}
+
+.music strong {
+  color: #ffd6ff;
+}
+
+.music p {
+  font-size: 13px;
+  color: #cfcfcf;
+}
+
+/* Discord Widget */
+.discord-widget {
+  width: 360px;
+  height: 520px;
+  padding: 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 30px rgba(255,120,200,0.25);
+}
+
+.discord-widget iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  border: none;
+}
+
+/* Falling petals */
+.petal {
+  position: fixed;
+  top: -20px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(cir
