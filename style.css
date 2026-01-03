@@ -102,3 +102,24 @@ h1 {
   color: black;
   cursor: pointer;
 }
+.petal {
+  position: fixed;
+  top: -20px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #ffd6ec 40%, #ff77b7 70%);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  pointer-events: none;
+  animation: fall linear infinite;
+  z-index: 1;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
