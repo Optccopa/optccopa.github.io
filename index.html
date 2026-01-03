@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
+  
+<script>
+  const petalCount = 50;
+
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = 8 + Math.random() * 6 + "s";
+    petal.style.animationDelay = Math.random() * 5 + "s";
+    petal.style.opacity = Math.random();
+
+    document.body.appendChild(petal);
+  }
+</script>
+
 <body>
 
 <div class="overlay"></div>
