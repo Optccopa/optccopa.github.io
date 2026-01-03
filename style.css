@@ -1,72 +1,104 @@
 * {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
 }
 
 body {
-  margin: 0;
-  background: #0b0b0f;
-  color: #eaeaf0;
+  height: 100vh;
+  background: url("background.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
+.overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.4);
 }
 
 .card {
-  background: linear-gradient(145deg, #12121a, #0d0d14);
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 0 25px rgba(0,255,200,0.05);
+  position: relative;
+  width: 360px;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  z-index: 2;
 }
 
-.profile {
-  text-align: center;
-}
-
-.avatar {
-  width: 110px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 5px 12px;
-  background: #1a1a25;
-  border-radius: 999px;
-  font-size: 0.9em;
-}
-
-.contacts {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-h1, h2 {
-  margin-bottom: 10px;
-}
-
-h3 {
-  margin-top: 20px;
-}
-
-.skill {
+.banner {
+  height: 120px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff77ff, #6b8cff);
   margin-bottom: 15px;
 }
 
-.bar {
-  background: #1a1a25;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 10px;
+h1 {
+  color: #ffd6ff;
+  text-align: center;
 }
 
-.bar div {
-  height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #22c55e);
+.tag {
+  display: block;
+  margin: 10px auto;
+  padding: 6px 14px;
+  width: fit-content;
+  border-radius: 20px;
+  background: rgba(255, 0, 255, 0.25);
+  color: #ffb7ff;
+  font-size: 13px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 15px 0;
+}
+
+.icons a {
+  color: #ffb7ff;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.icons a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.section {
+  margin-top: 15px;
+}
+
+.music, .discord {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.35);
+}
+
+.music img, .discord img {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+}
+
+.discord button {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: 12px;
+  border: none;
+  background: #ff77ff;
+  color: black;
+  cursor: pointer;
 }
