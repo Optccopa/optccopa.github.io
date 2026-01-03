@@ -4,12 +4,20 @@
   <meta charset="UTF-8" />
   <title>Copa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-  <div class="bg"></div>
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- Background overlay -->
+  <div class="overlay"></div>
+
+  <!-- Falling petals -->
   <script>
     const petalCount = 50;
     for (let i = 0; i < petalCount; i++) {
@@ -23,7 +31,10 @@
     }
   </script>
 
+  <!-- Page -->
   <div class="page">
+
+    <!-- Profile card -->
     <div class="card">
       <div class="banner"></div>
 
@@ -38,7 +49,7 @@
       </div>
 
       <div class="music">
-        <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228">
+        <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Album Art">
         <div>
           <strong>Copa</strong>
           <p>Listening to Follow God</p>
@@ -46,6 +57,7 @@
       </div>
     </div>
 
+    <!-- Discord widget -->
     <div class="discord-widget">
       <iframe
         src="https://discord.com/widget?id=1383213688927813663&theme=dark"
@@ -53,9 +65,7 @@
         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
       </iframe>
     </div>
+
   </div>
-</body>
-
-
 </body>
 </html>
