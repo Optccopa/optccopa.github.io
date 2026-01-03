@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,32 +11,42 @@ html, body {
   height: 100%;
 }
 
+/* Background */
 body {
   background: url("bg.jpg") center / cover no-repeat fixed;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Blur overlay */
+/* Dark blur overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(6px);
-  z-index: 0;
+  z-index: 1;
+}
+
+/* Page layout */
+.page {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
 }
 
 /* Card */
 .card {
-  position: relative;
-  z-index: 3;
   width: 360px;
   padding: 20px;
   border-radius: 20px;
   backdrop-filter: blur(18px);
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  margin: 80px auto 40px;
 }
 
 /* Banner */
@@ -46,6 +57,7 @@ body {
   margin-bottom: 15px;
 }
 
+/* Text */
 h1 {
   text-align: center;
   color: #ffd6ff;
@@ -55,11 +67,11 @@ h1 {
   display: block;
   margin: 10px auto;
   padding: 6px 14px;
-  width: fit-content;
   border-radius: 20px;
-  background: rgba(255,0,255,0.25);
+  background: rgba(255, 0, 255, 0.25);
   color: #ffb7ff;
   font-size: 13px;
+  width: fit-content;
 }
 
 /* Icons */
@@ -73,7 +85,7 @@ h1 {
 .icons a {
   color: #ffb7ff;
   font-size: 20px;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
 
 .icons a:hover {
@@ -97,13 +109,10 @@ h1 {
   border-radius: 10px;
 }
 
-/* Discord widget */
+/* Discord Widget */
 .discord-widget {
-  position: relative;
-  z-index: 3;
   width: 360px;
   height: 520px;
-  margin: 0 auto 60px;
   padding: 12px;
   border-radius: 20px;
   background: rgba(255,255,255,0.08);
@@ -118,7 +127,7 @@ h1 {
   border: none;
 }
 
-/* Petals */
+/* Falling petals */
 .petal {
   position: fixed;
   top: -20px;
@@ -129,3 +138,21 @@ h1 {
   transform: rotate(45deg);
   pointer-events: none;
   animation: fall linear infinite;
+  z-index: 2;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+  }
+}
