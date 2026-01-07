@@ -1,68 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Copa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Web Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="overlay"></div>
-
-  <!-- Falling petals -->
-  <script>
-    for (let i = 0; i < 40; i++) {
-      const p = document.createElement("div");
-      p.className = "petal";
-      p.style.left = Math.random() * 100 + "vw";
-      p.style.animationDuration = 10 + Math.random() * 8 + "s";
-      p.style.animationDelay = Math.random() * 5 + "s";
-      document.body.appendChild(p);
-    }
-  </script>
-
-  <div class="container">
-
-    <!-- LEFT CARD -->
-    <div class="profile-card">
-      <div class="profile-banner"></div>
-
-      <h1>Copa</h1>
-      <span class="badge">Code OPTCCOPA #ad</span>
-
-      <div class="socials">
-        <i class="fa-solid fa-globe"></i>
-        <i class="fa-brands fa-discord"></i>
-        <i class="fa-brands fa-twitch"></i>
-        <i class="fa-brands fa-tiktok"></i>
-      </div>
-
-      <div class="music-card">
-        <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228">
-        <div>
-          <strong>Copa</strong>
-          <p>Listening to Follow God</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT CARD -->
-    <div class="discord-card">
-      <div class="discord-header">
-        <i class="fa-brands fa-discord"></i>
-        <span>Discord</span>
-        <small>259 Members Online</small>
-      </div>
-
-      <iframe
-        src="https://discord.com/widget?id=1383213688927813663&theme=dark"
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-      </iframe>
-    </div>
-
+  <div class="card">
+    <h1>Hello 👋</h1>
+    <p>
+      This is a simple, clean web page made with just HTML and CSS.
+      You can use this as a starting point for any project.
+    </p>
+    <button id="alertBtn">Click Me</button>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
